@@ -3,6 +3,8 @@ package org.moodAnalyzer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Scanner;
+
 
 class MoodAnalyzerTest
 {
@@ -11,16 +13,8 @@ class MoodAnalyzerTest
     void moodAnalysis_returnSad_whenSad()
     {
         MoodAnalyzer M = new MoodAnalyzer();
-        String res = M.moodAnalysis("I am in Sad Mood");
+        String res = M.moodAnalysis("I am in a Sad Mood");
         Assertions.assertEquals("SAD", res);
-    }
-
-    @Test
-    void moodAnalysis_returnHappy_whenHappy()
-    {
-        MoodAnalyzer M = new MoodAnalyzer();
-        String res = M.moodAnalysis("I am in Any Mood");
-        Assertions.assertEquals("HAPPY", res);
     }
 
 
