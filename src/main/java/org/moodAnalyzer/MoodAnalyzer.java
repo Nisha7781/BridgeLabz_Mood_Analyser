@@ -15,11 +15,18 @@ public class MoodAnalyzer
     }
     public String moodAnalysis(String s)
     {
-        if (s.equalsIgnoreCase("I am in a Sad Mood"))
+        try
         {
-            return "SAD";
+            if (s.equalsIgnoreCase("I am in a Sad Mood"))
+            {
+                return "SAD";
+            }
+            else
+            {
+                return "HAPPY";
+            }
         }
-        else
+        catch (NullPointerException e)
         {
             return "HAPPY";
         }
