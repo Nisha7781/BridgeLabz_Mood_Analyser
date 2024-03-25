@@ -11,15 +11,15 @@ public class MoodAnalyzer {
 
     public String moodAnalysis(String s) throws MoodAnalysisException {
         try {
-            if (s == null)
-                throw new MoodAnalysisException("Mood cannot be null");
+            if (s == null || s.isEmpty())
+                throw new MoodAnalysisException(MoodError.EMPTY_MOOD.getMessage());
             if (s.equalsIgnoreCase("I am in a Sad Mood")) {
                 return "SAD";
             } else {
                 return "HAPPY";
             }
         } catch (NullPointerException e) {
-            throw new MoodAnalysisException("Mood cannot be null");
+            throw new MoodAnalysisException(MoodError.EMPTY_MOOD.getMessage());
         }
     }
 }

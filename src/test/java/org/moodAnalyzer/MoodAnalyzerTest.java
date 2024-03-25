@@ -25,7 +25,18 @@ class MoodAnalyzerTest {
         try {
             String res = M.moodAnalysis(null);
         } catch (MoodAnalysisException e) {
-            Assertions.assertEquals("Mood cannot be null", e.getMessage());
+            Assertions.assertEquals(MoodError.NULL_MOOD.getMessage(), e.getMessage());
+        }
+    }
+
+    @Test
+    void moodAnalysis_returnMoodAnalysisException_whenEmptyMood() {
+        MoodAnalyzer M = new MoodAnalyzer();
+        try
+        {
+            String res = M.moodAnalysis("");
+        } catch (MoodAnalysisException e) {
+            Assertions.assertEquals(MoodError.EMPTY_MOOD.getMessage(), e.getMessage());
         }
     }
 }
